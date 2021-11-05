@@ -4,6 +4,6 @@
 .card img {
   width: 100%;
   display: block;
-  border: 2px solid #fff;
-  border-radius: 6px;
+  border: 6px solid rgb(0, 0, 0);
+  border-radius: 8px;
 }

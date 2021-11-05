@@ -11,7 +11,7 @@ export default function SingleCard({ card, handleChoice }) {
         <img className="front" src={card.src} alt="card front" />
         <img
           className="back"
-          src="/img/cover.png"
+          src="/img/star.png"
           onClick={handleClick}
           alt="card back"
         />
