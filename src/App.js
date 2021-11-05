@@ -14,6 +14,8 @@ const cardImages = [
 function App() {
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
+  const [choiceOne, setChoiceOne] = useState(null);
+  const [choiceTwo, setChoiceTwo] = useState(null);
 
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
@@ -24,7 +26,9 @@ function App() {
     setTurns(0);
   };
 
-  console.log(cards, turns);
+  const handleChoice = (card) => {
+    choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
+  };
 
   return (
     <div className="App">
@@ -33,7 +37,12 @@ function App() {
 
       <div className="card-grid">
         {cards.map((card) => (
-          <SingleCard key={card.id} card={card} />
+          <SingleCard
+            handleChoice={handleChoice}
+            card={card}
+            key={card.id}
+            card={card}
+          />
         ))}
       </div>
     </div>
