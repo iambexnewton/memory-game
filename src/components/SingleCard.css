@@ -4,6 +4,31 @@
 .card img {
   width: 100%;
   display: block;
-  border: 6px solid rgb(0, 0, 0);
-  border-radius: 8px;
+}
+.card .front {
+  display: none;
+  position: absoloute;
+}
+
+.card.flipped {
+  animation: card-flip 0.3s ease-in;
+}
+
+.card.flipped .front {
+  display: block;
+}
+
+.card.flipped .back {
+  display: none;
+}
+
+/* Animation */
+
+@keyframes card-flip {
+  0% {
+    transform: rotateY(90deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
 }

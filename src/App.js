@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react';
-import './App.css';
-import SingleCard from './components/SingleCard';
+import { useState, useEffect } from "react";
+import "./App.css";
+import SingleCard from "./components/SingleCard";
 
 const cardImages = [
-  { src: '/img/gingerbread.png', matched: false },
-  { src: '/img/holly.png', matched: false },
-  { src: '/img/santa.png', matched: false },
-  { src: '/img/snowman.png', matched: false },
-  { src: '/img/stocking.png', matched: false },
-  { src: '/img/tree.png', matched: false },
+  { src: "/img/gingerbread.png", matched: false },
+  { src: "/img/holly.png", matched: false },
+  { src: "/img/santa.png", matched: false },
+  { src: "/img/snowman.png", matched: false },
+  { src: "/img/stocking.png", matched: false },
+  { src: "/img/tree.png", matched: false },
 ];
 
 function App() {
@@ -44,12 +44,10 @@ function App() {
         });
         resetTurn();
       } else {
-        resetTurn();
+        setTimeout(() => resetTurn(), 1000);
       }
     }
   }, [choiceOne, choiceTwo]);
-
-  console.log(cards);
 
   const resetTurn = () => {
     setChoiceOne(null);
@@ -59,16 +57,17 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Memory Match</h1>
+      <h1>Festive Match</h1>
       <button onClick={shuffleCards}>New Game</button>
 
       <div className="card-grid">
         {cards.map((card) => (
           <SingleCard
-            handleChoice={handleChoice}
-            card={card}
             key={card.id}
             card={card}
+            handleChoice={handleChoice}
+            flipped={card === choiceOne || card === choiceTwo || card.matched}
+            matched={card.matched}
           />
         ))}
       </div>
