@@ -1,12 +1,14 @@
 .App {
   max-width: 860px;
-  margin: 40px auto;
+  overflow: hidden;
+  min-height: 100vh;
+  margin: auto;
 }
 
 button {
   background: none;
   border: 2px solid rgb(0, 0, 0);
-  padding: 6px 12px;
+  padding: 8px;
   border-radius: 4px;
   color: rgb(0, 0, 0);
   font-weight: bold;
@@ -15,12 +17,13 @@ button {
 }
 
 button:hover {
-  background: #92113c;
-  color: #fff;
+  background: #f0b851;
+  color: rgb(0, 0, 0);
+  transform: scale(1.2);
 }
 .card-grid {
-  margin-top: 10px;
+  margin-top: 12px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 16px;
 }
